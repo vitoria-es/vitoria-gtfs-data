@@ -1,2 +1,2 @@
 agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone,agency_fare_url,agency_email
-01,"Secretaria de Transportes, Trânsito e Infraestrutura Urbana (Setran)",http://www.vitoria.es.gov.br/setran,UTC-3,pt_BR,(27) 3382-6447,,
+01,"Secretaria de Transportes, Trânsito e Infraestrutura Urbana (Setran)",http://www.vitoria.es.gov.br/setran,America/Sao_Paulo	,pt_BR,156,http://www.vitoria.es.gov.br/setran.php?pagina=tarifas,
