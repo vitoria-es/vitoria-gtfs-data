@@ -1,0 +1,3 @@
+route_id,service_id,trip_id,trip_headsign,trip_short_name,direction_id,block_id,shape_id,wheelchair_accessible,bikes_allowed
+0121,EVERYDAY,01210,Mário Cypreste,,0,,SHP01210,,
+0121,EVERYDAY,01211,Jardim Camburi,,1,,SHP01211,,
