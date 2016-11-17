@@ -1,4 +1,4 @@
 fare_id, route_id, origin_id, destination_id, contains_id
-A,
-B, 0290
-B, 0110
+A, , , ,
+B, 0290, , ,
+B, 0110, , ,
