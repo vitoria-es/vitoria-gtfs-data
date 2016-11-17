@@ -17,3 +17,13 @@ the [GTFS Specification](https://developers.google.com/transit/gtfs/reference/).
 - stop_times.txt
 - stops.txt
 - trips.txt
+
+## Optional files
+
+- calendar_dates.txt
+- fare_attributes.txt
+- fare_rules.txt
+- shapes.txt
+- frequencies.txt
+- transfers.txt
+- feed_info.txt
