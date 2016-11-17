@@ -1,3 +1,7 @@
 route_id,service_id,trip_id,trip_headsign,trip_short_name,direction_id,block_id,shape_id,wheelchair_accessible,bikes_allowed
-0121,EVERYDAY,01210,Mário Cypreste,,0,,SHP01210,,
-0121,EVERYDAY,01211,Jardim Camburi,,1,,SHP01211,,
+0121,WEEKDAY,01210A,Mário Cypreste,,0,,SHP01210,,
+0121,WEEKDAY,01211A,Jardim Camburi,,1,,SHP01211,,
+0121,SATURDAY,01210B,Mário Cypreste,,0,,SHP01210,,
+0121,SATURDAY,01211B,Jardim Camburi,,1,,SHP01211,,
+0121,SUNDAY,01210C,Mário Cypreste,,0,,SHP01210,,
+0121,SUNDAY,01211C,Jardim Camburi,,1,,SHP01211,,
