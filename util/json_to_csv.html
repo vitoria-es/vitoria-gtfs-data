@@ -7,7 +7,7 @@
     <body>
         <pre id="csv"></pre>
     </body>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script>
 var loadJSON = function (url, callback) {
     var xhr = new XMLHttpRequest();
@@ -21,30 +21,33 @@ var loadJSON = function (url, callback) {
     xhr.send(null);
 };
 
-var extractGeojsonToCSV = function(input) {
-    var output, features;
-
+var extractGeojsonToCSV = function(input, columns) {
     if (!input) return;
 
-    output = [];
-    features = input.features;
+    var output = [];
+    var header = _.keys(columns).join(', ');
+    var values = _.values(columns);
 
-    output.push(['stop_id', 'stop_code', 'stop_name', 'stop_desc', 'stop_lat', 'stop_lon', 'zone_id', 'stop_url', 'location_type', 'parent_station', 'stop_timezone', 'wheelchair_boarding'].join(', '));
-    features.forEach(function (feature) {
-        output.push([
-            feature.id,
-            feature.properties.numero,
-            '"' + feature.properties.endereco + '"',
-            '"' + feature.properties.referencia + '"',
-            feature.geometry.coordinates[1],
-            feature.geometry.coordinates[0],
-            '',
-            '',
-            '0',
-            '',
-            '',
-            '',
-        ].join(', '));
+    output.push(header);
+    input.features.forEach(function (feature) {
+        var columns = [];
+        var index = function (obj, is, value) {
+            if (typeof is == 'string')
+                return index(obj, is.split('.'), value);
+            else if (is.length == 1 && value !== undefined)
+                return obj[is[0]] = value;
+            else if (is.length == 0)
+                return obj;
+            else
+                return index(obj[is[0]], is.slice(1), value);
+        };
+        values.forEach(function (value) {
+            if (_.isArray(value))
+                columns.push('"' + index(feature, value) + '"');
+            else
+                columns.push(value);
+        });
+        output.push(columns.join(', '));
     });
 
     return output.join('\n');
@@ -53,9 +56,21 @@ var extractGeojsonToCSV = function(input) {
 var init = function () {
     loadJSON('stops.json', function (response) {
         var jsonData = JSON.parse(response);
-        var csv = extractGeojsonToCSV(jsonData);
-        var el = document.getElementById('csv');
-        el.innerHTML = csv;
+        var columns = {
+            stop_id: ['id'],
+            stop_code: ['properties', 'numero'],
+            stop_name: ['properties', 'endereco'],
+            stop_desc: ['properties', 'referencia'],
+            stop_lon: ['geometry', 'coordinates', '1'],
+            stop_lat: ['geometry', 'coordinates', '0'],
+            zone_id: '',
+            stop_url: '',
+            location_type: '0',
+            parent_station: '',
+            stop_timezone: '',
+            wheelchair_boarding: '',
+        };
+        document.getElementById('csv').innerHTML = extractGeojsonToCSV(jsonData, columns);
     });
 };
 
