@@ -33,11 +33,7 @@ var extractGeojsonToCSV = function(input, columns) {
         var columns = [];
         values.forEach(function (value) {
             var isAccessor = value.indexOf('.') > -1;
-            if (isAccessor) {
-                columns.push('"' + eval('feature' + value) + '"');
-            } else {
-                columns.push(value);
-            }
+            columns.push(isAccessor ? '"' + eval('feature' + value) + '"' : value);
         });
         output.push(columns.join(', '));
     });
@@ -49,17 +45,17 @@ var init = function () {
     loadJSON('stops.json', function (response) {
         var jsonData = JSON.parse(response);
         var columns = {
-            stop_id: '.id',
+            stop_id:   '.id',
             stop_code: '.properties.numero',
             stop_name: '.properties.endereco',
             stop_desc: '.properties.referencia',
-            stop_lon: '.geometry.coordinates[1]',
-            stop_lat: '.geometry.coordinates[0]',
-            zone_id: '',
-            stop_url: '',
-            location_type: '0',
+            stop_lon:  '.geometry.coordinates[1]',
+            stop_lat:  '.geometry.coordinates[0]',
+            zone_id:   '',
+            stop_url:  '',
+            location_type:  '0',
             parent_station: '',
-            stop_timezone: '',
+            stop_timezone:  '',
             wheelchair_boarding: '',
         };
         document.getElementById('csv').innerHTML = extractGeojsonToCSV(jsonData, columns);
