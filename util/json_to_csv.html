@@ -25,10 +25,10 @@ var extractGeojsonToCSV = function(input, columns) {
     if (!input) return;
 
     var output = [];
-    var header = _.keys(columns).join(', ');
+    var header = _.keys(columns);
     var values = _.values(columns);
 
-    output.push(header);
+    output.push(header.join(', '));
     input.features.forEach(function (feature) {
         var columns = [];
         var index = function (obj, is, value) {
