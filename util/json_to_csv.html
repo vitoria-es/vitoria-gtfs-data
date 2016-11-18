@@ -31,21 +31,13 @@ var extractGeojsonToCSV = function(input, columns) {
     output.push(header.join(', '));
     input.features.forEach(function (feature) {
         var columns = [];
-        var index = function (obj, is, value) {
-            if (typeof is === 'string')
-                return index(obj, is.split('.'), value);
-            else if (is.length === 1 && value !== undefined)
-                return obj[is[0]] = value;
-            else if (is.length === 0)
-                return obj;
-            else
-                return index(obj[is[0]], is.slice(1), value);
-        };
         values.forEach(function (value) {
-            if (_.isArray(value))
-                columns.push('"' + index(feature, value) + '"');
-            else
+            var isAccessor = value.indexOf('.') > -1;
+            if (isAccessor) {
+                columns.push('"' + eval('feature' + value) + '"');
+            } else {
                 columns.push(value);
+            }
         });
         output.push(columns.join(', '));
     });
@@ -57,12 +49,12 @@ var init = function () {
     loadJSON('stops.json', function (response) {
         var jsonData = JSON.parse(response);
         var columns = {
-            stop_id: ['id'],
-            stop_code: ['properties', 'numero'],
-            stop_name: ['properties', 'endereco'],
-            stop_desc: ['properties', 'referencia'],
-            stop_lon: ['geometry', 'coordinates', '1'],
-            stop_lat: ['geometry', 'coordinates', '0'],
+            stop_id: '.id',
+            stop_code: '.properties.numero',
+            stop_name: '.properties.endereco',
+            stop_desc: '.properties.referencia',
+            stop_lon: '.geometry.coordinates[1]',
+            stop_lat: '.geometry.coordinates[0]',
             zone_id: '',
             stop_url: '',
             location_type: '0',
