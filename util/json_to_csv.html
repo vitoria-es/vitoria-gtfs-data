@@ -46,9 +46,9 @@ var init = function () {
         var jsonData = JSON.parse(response);
         var columns = {
             stop_id:   '.id',
-            stop_code: '.properties.numero',
-            stop_name: '.properties.endereco',
-            stop_desc: '.properties.referencia',
+            stop_code: '.properties.identificador',
+            stop_name: '.properties.logradouro',
+            stop_desc: '.properties.descricao',
             stop_lon:  '.geometry.coordinates[1]',
             stop_lat:  '.geometry.coordinates[0]',
             zone_id:   '',
