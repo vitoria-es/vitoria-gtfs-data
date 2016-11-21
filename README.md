@@ -1,16 +1,22 @@
 # Vitória GTFS data
 
-This is place to organize Vitória's public transport information in the GTFS format.
+This is the repository for Vitória's public transport information in the GTFS format.
 
-If you don't know what GTFS is and how it works, please check out the [Google Transit website](https://developers.google.com/transit/gtfs/) and read
-the [GTFS Specification](https://developers.google.com/transit/gtfs/reference/). There's lots of good information there, and don't forget to come back here later.
+The GTFS “feeds” let public transit agencies publish their transit data and developers write applications that consume that data in an interoperable way.
+
+It was created in the belief that public-interest information should be open and accessible.
+
+To learn more, please check out the [Google Transit website](https://developers.google.com/transit/gtfs/) and read
+the [GTFS Specification](https://developers.google.com/transit/gtfs/reference/), there's lots of good information there.
 
 
 ## The Goal
 
 The goal of this project's to make Vitória's public transport information available in Google Maps.
 
-To make this happen we first need to have all required files' information at least partially populated. Afterwards, the repository will be presented to the transit authorities to get their support, fill in the gaps, QA assist, maintain and finally publish it to Google Maps.
+To see an actual example of how this would look like, check out the [Belo Horizonte's transit directions](https://www.google.com.br/maps/dir/Restaurante+Rodoviária+de+BH+-+Av.+do+Contorno+-+Centro,+Belo+Horizonte+-+MG,+30110-002/Parque+Municipal+das+Mangabeiras+-+Mangabeiras,+Belo+Horizonte+-+MG/@-19.9361885,-43.9432215,14z/data=!4m14!4m13!1m5!1m1!1s0xa699fddee157cf:0x2947bf51730afd18!2m2!1d-43.9414736!2d-19.9134868!1m5!1m1!1s0xa699739551d309:0x979e8bad2de90b13!2m2!1d-43.9076151!2d-19.9550833!3e3?hl=pt-BR) on Google Maps.
+
+To make this happen we first need to have all required files' information at least partially populated. Afterwards, the repository will be presented to the transit authorities to get their support, fill in the gaps, QA assist, maintain and finally host it online.
 
 
 ## Help Needed
