@@ -17,7 +17,7 @@ To make this happen we first need to have all required files' information at lea
 
 This is a voluntary endeavor to make the city's transit data structurally available and accessible to more people.
 
-Help in general is throughly appreciated but the tasks below are a good starting point.
+Help in general is thoroughly appreciated though the tasks below are a good starting point.
 
 - [x] ~~Build a tool to scrape schedule data from the [city's transit website](http://sistemas.vitoria.es.gov.br/redeiti/).~~
 - [ ] Populate the `frequencies.csv` file.
