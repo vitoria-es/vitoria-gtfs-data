@@ -30,6 +30,13 @@ Help in general is thoroughly appreciated though the tasks below are a good star
 
 ## Details
 
+### Tools
+
+To help populating the feeds some tools were created to extract, parse and convert the transit data in various formats, which are located in the `tools/` folder. Keep in mind that these aren't optimized in any way but should work fine.
+
+- **stops-parser.html** – a couple functions to convert from/to JSON, Geojson and CSV formats.
+- **schedule-scraper** – extract routes schedule information. You should've [Composer](http://getcomposer.org) available to install its dependencies.
+
 ### Required Files
 
 **Note:** during development files may be seem with the `.csv` extension as it's better handled by spreadsheet program, though the standard explicitly demands it to be `.txt`.
