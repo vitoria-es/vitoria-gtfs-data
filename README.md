@@ -19,7 +19,7 @@ This is a voluntary endeavor to make the city's transit data structurally availa
 
 Help in general is throughly appreciated but the tasks below are a good starting point.
 
-- [ ] Build a tool to scrape schedule data from the [city's transit website](http://sistemas.vitoria.es.gov.br/redeiti/).
+- [x] ~~Build a tool to scrape schedule data from the [city's transit website](http://sistemas.vitoria.es.gov.br/redeiti/).~~
 - [ ] Populate the `frequencies.csv` file.
 - [ ] Build or find a tool to help generating data for the `stop_times.csv` file.
 - [ ] Populate at least one trip's worth of stop times data.
