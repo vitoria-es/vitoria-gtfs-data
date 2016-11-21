@@ -1,0 +1,8 @@
+{
+    "name": "vitoria-es/schedule-scraper",
+    "description": "Schedule scraper",
+    "type": "project",
+    "require": {
+        "fabpot/goutte": "^3.2"
+    }
+}
