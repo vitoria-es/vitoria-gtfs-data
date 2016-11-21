@@ -1,0 +1,7 @@
+trip_id, arrival_time, departure_time, stop_id, stop_sequence, stop_headsign, pickup_type, drop_off_type, shape_dist_traveled, timepoint
+01211A, , , 491, 1, , , , , , 
+01211A, , , 493, 2, , , , , , 
+01211A, , , 495, 3, , , , , , 
+01211A, , , 1082, 4, , , , , , 
+01211A, , , 498, 5, , , , , , 
+01211A, , , 502, 6, , , , , , 
